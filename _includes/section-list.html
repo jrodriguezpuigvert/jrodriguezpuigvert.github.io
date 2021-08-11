@@ -1,29 +1,19 @@
 {% for item in include.content %}
+<p>
   <div class="row clearfix layout layout-{{item.layout | default: 'left'}}">
-    <div class="col-xs-12 col-sm-4 col-md-3 col-print-12 details">
-      <h4>{{ item.title }}</h4>
-      {%- if item.sub_title -%}<p><b>{{ item.sub_title }}</b></p>{%- endif -%}
-      {%- if item.caption -%}<p>{{ item.caption }}</p>{%- endif -%}
+          <div class="row align-items-center">
+          <div class="col-sm-3 pub-image-cell">
+          	<a href="http://www.youtube.com/watch?feature=player_embedded&v={{item.youtube-id}}" target="_blank">
+    			<img src="http://img.youtube.com/vi/{{item.youtube-id}}/0.jpg" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" />
+    		</a>
+          </div>
+          <div class="col-sm-9 py-3">
+            <h4><b>{{ item.title }}</b></h4>
+            <p>{{ item.autors}}</p>
+            <p>Under submission</p>
 
-      {%- if item.link -%}
-        {% include a.html href=item.link class="link" %}
-          {%- if item.link_text -%}{{ item.link_text }}{%- else -%}{{ item.link }}{%- endif -%}
-        </a>
-      {%- endif -%}
-
-      <p class="no-print aditional-links">
-        {% for link in item.additional_links %}
-          {% include a.html href=link.url class="" %}
-            <i class="{{ link.icon }}" title="{{ link.title | escape }}"></i>
-          </a>
-        {% endfor %}
-      </p>
-    </div>
-    <div class="col-xs-12 col-sm-8 col-md-9 col-print-12 content">
-      {%- if item.quote -%}
-        <p class="quote">{{ item.quote }}</p>
-      {%- endif -%}
-      {{ item.description | strip | markdownify }}
-    </div>
+            </div>
+          </div>
   </div>
+</p>          
 {% endfor %}

@@ -7,20 +7,22 @@ version: 2
 
 # Personal info
 name: Javier Rodriguez Puigvert
-title: Phd Candidate
-email: Your email (optional)
+title: Phd Candidate, University Zaragoza, group "Robótica, Percepción y Tiempo Real (RoPeRT)"
+email: jrp@unizar.es
 # email_title: Email (Email title override)
-#phone: Your phone number (optional)
+phone: (+34)638450611
 # phone_title: Phone (Phone title override)
-website: Your website (eg. https://google.com)(optional)
+#website: Your website (eg. https://google.com)(optional)
 # website_title: Web (Website title override)
+# Curriculum Vitae (link to online pdf)
 
 # Dark Mode (true/false/never)
 darkmode: false
 
 # Social links
 twitter_username: JRPuigvert
-github_username:  jrodriguezpuigvert
+linkedin_username: javier-rodriguez-puigvert-b4642a66
+github_username: jrodriguezpuigvert
 
 # Additional icon links
 #additional_links:
@@ -40,14 +42,8 @@ github_username:  jrodriguezpuigvert
 # About Section
 # about_title: About Me (Use this to override about section title)
 about_profile_image: ./images/profile.jpg
-about_content: 
-  Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
-
-  You can even add paragraphs by using empty lines like this and add anything else [markdown](https://www.markdownguide.org/getting-started#what-is-markdown) supports such as
-    - Lists
-    - Tables
-    - <a href="google.com">Links</a>
-    [![VIDEO](http://img.youtube.com/vi/nj5_eVFQVZ8/0.jpg)](https://youtu.be/nj5_eVFQVZ8) 
+about_content:
+   I am researching Bayesian Deep Learning, Computer Vision, and SLAM and am advised by [Javier Civera](https://www.linkedin.com/in/jcivera/) and [Ruben Martinez-Cantin](http://webdiis.unizar.es/~rmcantin/) under my PhD programme which I started in 2020. My trajectory has been driven by my interest in robotics, artificial intelligence, and augmented reality. At my last work station Cologne Intelligence GmbH, Germany, I initiated and lead the company's research into visual SLAM systems combined with augmented reality platforms for mobile devices. I completed by Master Thesis on visual localisation systems at TH Köln, Germany. I enriched my university studies by participating with the ["Eurobotics Engineering"](https://arc-robots.org/) team in international autonomous robotics competitions. 
 content:
   - title: My Research # Title for the section
     layout: list # Type of content section (list/text)
@@ -55,7 +51,7 @@ content:
    
       - layout: 
         title: Bayesian Deep Networks for Supervised Single-View Depth Learning
-        link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
+        link: Link to project (https://arxiv.org/abs/2104.14202)
         link_text: Link Text
         quote: >
           Short overview of the project (optional)
@@ -63,7 +59,9 @@ content:
           Description about the work on/with the project
         youtube-id: nj5_eVFQVZ8
         autors: "Javier Rodríguez-Puigvert, Rubén Martínez-Cantín, Javier Civera"
-        
+        date: "29 Apr 2021" 
+        abstract: "Uncertainty quantification is a key aspect in robotic perception, as overconfident or point estimators can lead to collisions and damages to the environment and the robot. In this paper, we evaluate scalable approaches to uncertainty quantification in single-view supervised depth learning, specifically MC dropout and deep ensembles."
+
       - layout: 
         title: Localization Service Using Sparse Visual Information Based on Recent Augmented Reality Platforms.
         link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
@@ -74,9 +72,9 @@ content:
           Description about the work on/with the project
         youtube-id: UPYLnRE75t4	
         autors: "Javier RodríguezPuigvert; Till Krempel; Arnulph Fuhrmann"
-        
+        abstract: "lorem"
       - layout: 
-        title: Localization Service Using Sparse Visual Information Based on Recent Augmented Reality Platforms.
+        title: "Tango Step by Step: Indoor Positioning and Navigation"
         link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
         link_text: Link Text
         quote: >
@@ -86,6 +84,7 @@ content:
         youtube-id: UPYLnRE75t4	
         autors: "Javier RodríguezPuigvert; Till Krempel; Arnulph Fuhrmann"
         
+        abstract: "lorem"
       - layout: 
         title: Localization Service Using Sparse Visual Information Based on Recent Augmented Reality Platforms.
         quote: >
@@ -94,7 +93,7 @@ content:
           Description about the work on/with the project
         youtube-id: UPYLnRE75t4	
         autors: "Javier RodríguezPuigvert; Till Krempel; Arnulph Fuhrmann"
-
+        abstract: "lorem"
       - layout: 
         title: Localization Service Using Sparse Visual Information Based on Recent Augmented Reality Platforms.
         quote: >
@@ -103,8 +102,34 @@ content:
           Description about the work on/with the project
         youtube-id: UPYLnRE75t4	
         autors: "Javier RodríguezPuigvert; Till Krempel; Arnulph Fuhrmann"
+        abstract: "lorem"
 
+  - title: Projects # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: 
+        title: Other NameAugmented Reality Platform for Indoor Navigation
+        link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
+        link_text: Link Text
+        quote: >
+          Short overview of the project (optional)
+        description: | # this will include new lines to allow paragraphs
+          Description about the work on/with the project
+        youtube-id: A-rrkIlzEO8
+        autors: "Javier Rodríguez-Puigvert at Cologne Intelligence"
+        abstract: "lorem"
 
+      - layout: 
+        title: Augmented Reality Platform for Indoor Navigation
+        link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
+        link_text: Link Text
+        quote: >
+          Short overview of the project (optional)
+        description: | # this will include new lines to allow paragraphs
+          Description about the work on/with the project
+        youtube-id: 5jfydcCPt4s
+        autors: "Javier Rodríguez-Puigvert at Cologne Intelligence"
+        abstract: "lorem"
 # Footer
 footer_show_references: true
 # references_title: References on request (Override references text)

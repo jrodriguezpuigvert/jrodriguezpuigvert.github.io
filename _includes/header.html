@@ -97,6 +97,14 @@
             </a>
           </li>
         {%- endif -%}
+        
+        {%- if site.scholar -%}
+          <li>
+            <a target="_blank" href="https://scholar.google.es/citations?user={{ site.scholar | escape }}" class="button button--sacnite button--round-l">
+              <i class="fab fa-scholar fa-lg" title="Google Scholar"></i>
+            </a>
+          </li>
+        {%- endif -%}
         {% for link in site.additional_links %}
           <li>
             {% include a.html href=link.url class="button button--sacnite button--round-l" %}
@@ -111,14 +119,14 @@
           {{ site.email_title | default: "Email" }}: <a href="mailto:{{ site.email }}" target="_blank">{{ site.email | escape }}</a>
         </p>
       {%- endif -%}
+      {%- if site.website -%}
+        <p>
+          <a href={{site.website}}>{{ site.website_link }} </a> 
+        </p>
+      {%- endif -%}
       {%- if site.phone -%}
         <p>
           {{ site.phone_title | default: "Phone" }}: {{ site.phone | escape }}
-        </p>
-      {%- endif -%}
-      {%- if site.website -%}
-        <p>
-          {{ site.website_title | default: "Web" }}: {% include a.html href=site.website %}{{ site.website | escape }}</a>
         </p>
       {%- endif -%}
     </div>

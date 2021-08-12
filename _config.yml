@@ -13,7 +13,7 @@ email: jrp {at} unizar.es
 phone: 
 # phone_title: Phone (Phone title override)
 website: images/cv.pdf
-website_link:  RÉSUMÉ
+website_link:  CV
 
 # Dark Mode (true/false/never)
 darkmode: false
@@ -137,7 +137,7 @@ content:
         youtube-id: tDb1AqtHDmA
         autors: "Yverdon Les Bains 2015. Switzerland"
 # Footer
-footer_show_references: true
+footer_show_references: false
 # references_title: References on request (Override references text)
 
 # Build settings

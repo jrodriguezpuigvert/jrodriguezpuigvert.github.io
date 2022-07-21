@@ -42,20 +42,21 @@ scholar: InS0CBQAAAAJ
 # about_title: About Me (Use this to override about section title)
 about_profile_image: ./images/profile.jpg
 about_content:
-   I am researching Bayesian Deep Learning, Computer Vision, and SLAM and am advised by [Javier Civera](https://www.linkedin.com/in/jcivera/) and [Ruben Martinez-Cantin](http://webdiis.unizar.es/~rmcantin/) under my PhD programme which I started in 2020. My trajectory has been driven by my interest in robotics, artificial intelligence, and augmented reality. At my last work station Cologne Intelligence GmbH, Germany, I brought forward the company's research into visual SLAM systems combined with augmented reality platforms for mobile devices. I completed by Master Thesis on visual localisation systems at TH Köln, Germany. I enriched my university studies by participating with the ["Eurobotics Engineering"](https://arc-robots.org/en/eurobot-robots/) team in international autonomous robotics competitions. 
+   I am researching in Uncertainty quantification for Computer Vision and SLAM and am advised by [Javier Civera](https://www.linkedin.com/in/jcivera/) and [Ruben Martinez-Cantin](http://webdiis.unizar.es/~rmcantin/) under my PhD programme which I started in 2020. 
+   Currently, I am visiting the Autonomous System Laboratory ([ASL](https://asl.ethz.ch/)) at ETH Zurich supervised by [Cesar Cadena](http://n.ethz.ch/~cesarc/). My trajectory has been driven by my interest in robotics, artificial intelligence, and augmented reality. At my last work station Cologne Intelligence GmbH, Germany, I brought forward the company's research into visual SLAM systems combined with augmented reality platforms for mobile devices. I completed by Master Thesis on visual localisation systems at TH Köln, Germany. I enriched my university studies by participating with the ["Eurobotics Engineering"](https://arc-robots.org/en/eurobot-robots/) team in international autonomous robotics competitions. 
 content:
   - title: My Research # Title for the section
     layout: list # Type of content section (list/text)
     content:
       - layout:
-        title: On the Uncertain Single-View Depths in Endoscopies
+        title: On the Uncertain Single-View Depths in Colonoscopies
         link: http://arxiv.org/abs/2112.08906
         link_text: Paper
         description: | # this will include new lines to allow paragraphs
           Description about the work on/with the project
         youtube-id: VrUjPeZyj-0
         autors: "Javier Rodríguez-Puigvert,David Recasens, Javier Civera, Rubén Martínez-Cantín"
-        source: "ArXiv, under submission"
+        source: "Medical Image Computing and Computer Assisted Intervention 2022"
         abstract: "Estimating depth from endoscopic images is a pre-requisite for a wide set of AI-assisted technologies, namely accurate localization, measurement of tumors, or identification of non-inspected areas. As the domain specificity of colonoscopies -- a deformable low-texture environment with fluids, poor lighting conditions and abrupt sensor motions -- pose challenges to multi-view approaches, single-view depth learning stands out as a promising line of for single-view depth estimation in colonoscopies. Their uncertainty quantification offers great potential for such a critical application area. Our specific contribution is two-fold: 1) an exhaustive analysis of Bayesian deep networks for depth estimation in three different datasets, highlighting challenges and conclusions regarding synthetic-to-real domain changes and supervised vs. self-supervised methods; and 2) a novel teacher-student approach"
       - layout:
         title: Bayesian Deep Networks for Supervised Single-View Depth Learning
@@ -65,7 +66,7 @@ content:
           Description about the work on/with the project
         youtube-id: nj5_eVFQVZ8
         autors: "Javier Rodríguez-Puigvert, Rubén Martínez-Cantín, Javier Civera"
-        source: "ArXiv, under submission"
+        source: "IEEE Robotics and Automation Letters 2022 "
         abstract: "Uncertainty quantification is a key aspect in robotic perception, as overconfident or point estimators can lead to collisions and damages to the environment and the robot. In this paper, we evaluate scalable approaches to uncertainty quantification in single-view supervised depth learning, specifically MC dropout and deep ensembles."
       - layout:
         title: Localization Service Using Sparse Visual Information Based on Recent Augmented Reality Platforms
@@ -77,7 +78,7 @@ content:
           Description about the work on/with the project
         youtube-id: 4gG3JjAgRFM
         autors: "Javier RodríguezPuigvert; Till Krempel; Arnulph Fuhrmann"
-        source: "ISMAR (In Adjunct Proceedings of the IEEE International Symposium for Mixed and Augmented Reality 2018) Munich, 16 Oct 2018"
+        source: "ISMAR (In Adjunct Proceedings of the IEEE International Symposium for Mixed and Augmented Reality 2018) Munich 2018"
         abstract: "We propose a localization service based on sparse visual information using ARCore, a state-of-the-art augmented reality platform for mobile devices. Our service is constituted by two components - front-end and back-end. On the front-end, using the point cloud generated by ARCore as feature points, a corresponding binary keypoint descriptor algorithm like ORB or FREAK is computed to describe the place. On the back-end, this binary descriptor is searched in a map using the bags of binary words technique, responding with the position of the recognized place."
 
       - layout: 

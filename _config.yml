@@ -1,5 +1,5 @@
 # Site
-repository: Git repository where your resume will be hosted, only required if you are hosting on GitHub (eg. sproogen/modern-resume-theme)
+repository: jrodriguezpuigvert/jrodriguezpuigvert.github.io
 # favicon: Directory of your favicon (eg. images/favicon.ico)(optional)
 
 # Content configuration version
@@ -7,22 +7,25 @@ version: 2
 
 # Personal info
 name: Javier Rodriguez Puigvert
-title: Phd Candidate at University Zaragoza
+title: Postdoctoral Researcher at Universidad de Zaragoza · EndoCartoScope
 email: jrp {at} unizar.es
 # email_title: Email (Email title override)
 phone: 
 # phone_title: Phone (Phone title override)
-website: images/cv.pdf
-website_link:  CV
+# website: images/cv.pdf
+# website_link:  CV
+
+description: "Javier Rodriguez Puigvert, postdoctoral researcher at Universidad de Zaragoza working on EndoCartoScope, an EIC Transition project. Spatial AI, single-view depth, uncertainty and SLAM for endoscopy."
+affiliation: "Spatial AI for endoscopy"
 
 # Dark Mode (true/false/never)
 darkmode: false
 
 # Social links
-twitter_username: JRPuigvert
+# twitter_username: JRPuigvert
 linkedin_username: javier-rodriguez-puigvert-b4642a66
-github_username: jrodriguezpuigvert
-scholar: InS0CBQAAAAJ
+# github_username: jrodriguezpuigvert
+scholar: 0yxrPb4AAAAJ
 # Additional icon links
 #additional_links:
 #- title: Link name
@@ -41,69 +44,223 @@ scholar: InS0CBQAAAAJ
 # About Section
 # about_title: About Me (Use this to override about section title)
 about_profile_image: ./images/profile.jpg
-about_content:
-   I am researching in Uncertainty quantification for Computer Vision and SLAM and am advised by [Javier Civera](https://www.linkedin.com/in/jcivera/) and [Ruben Martinez-Cantin](http://webdiis.unizar.es/~rmcantin/) under my PhD programme which I started in 2020. 
-   Currently, I am visiting the Autonomous System Laboratory ([ASL](https://asl.ethz.ch/)) at ETH Zurich supervised by [Cesar Cadena](http://n.ethz.ch/~cesarc/). My trajectory has been driven by my interest in robotics, artificial intelligence, and augmented reality. At my last work station Cologne Intelligence GmbH, Germany, I brought forward the company's research into visual SLAM systems combined with augmented reality platforms for mobile devices. I completed by Master Thesis on visual localisation systems at TH Köln, Germany. I enriched my university studies by participating with the ["Eurobotics Engineering"](https://arc-robots.org/en/eurobot-robots/) team in international autonomous robotics competitions. 
+about_content: |
+   I am a postdoctoral researcher with J.M.M. Montiel at the Universidad de Zaragoza, working on [EndoCartoScope](https://endocartoscope.eu), an EIC Transition project building Spatial AI for medical endoscopy.
+
+   PhD in single-view depth and uncertainty for endoscopy at the Universidad de Zaragoza (2023), advised by [Javier Civera](https://www.linkedin.com/in/jcivera/) and [Ruben Martinez-Cantin](http://webdiis.unizar.es/~rmcantin/). Visiting researcher at [ASL](https://asl.ethz.ch/), ETH Zurich, and previously five years in industry working on visual SLAM and augmented reality.
 content:
   - title: My Research # Title for the section
+    nav: Research
     layout: list # Type of content section (list/text)
     content:
+      - layout:
+        title: "EndoCartoScope: Spatial AI for Medical Endoscopy"
+        link: https://endocartoscope.eu
+        link_text: Project site
+        venue: "EIC Transition 2025"
+        teaser: ./images/logos/endocartoscope.png
+        links:
+          - title: CORDIS
+            url: https://cordis.europa.eu/project/id/101211633
+        autors: "Javier Rodríguez-Puigvert, J.M.M. Montiel and the EndoCartoScope team, Universidad de Zaragoza"
+        source: "EIC Transition, Horizon Europe, Grant No. 101211633 (2025–2028)"
+        abstract: "We have won an EIC Transition grant from the European Innovation Council to turn our research on SLAM and depth estimation for endoscopy into a product. EndoCartoScope is a software-only spatial AI layer for standard flexible endoscopes: it builds a real-time 3D map of the explored cavity from the camera feed alone while localising the endoscope inside it, measures how much of the mucosa has been inspected, and estimates the metric size of polyps and lesions, without hardware modifications. The project is led by the Universidad de Zaragoza, with IIS Aragón as clinical validator, and takes the technology from TRL4 to TRL6 on the way to a spin-off."
+      - layout:
+        title: "Automated vision-based assistance tools in bronchoscopy: stenosis severity estimation"
+        link: https://sites.google.com/unizar.es/subglottic-stenosis-estimation/home
+        link_text: Project page
+        venue: "IJCARS 2025"
+        links:
+          - title: Paper
+            url: https://link.springer.com/article/10.1007/s11548-025-03398-x
+          - title: arXiv
+            url: https://arxiv.org/abs/2505.05136
+          - title: Code
+            url: https://github.com/ClaraTmsn/subglottic-stenosis-estimation
+          - title: Dataset
+            url: https://www.synapse.org/Synapse:syn68202410/wiki/632848
+        teaser: ./images/stenosis.png
+        autors: "Clara Tomasini, Javier Rodríguez-Puigvert, Dinora Polanco, Manuel Viñuales, Luis Riazuelo, Ana Cristina Murillo"
+        source: "International Journal of Computer Assisted Radiology and Surgery (IJCARS) 2025"
+        abstract: "Subglottic stenosis refers to the narrowing of the subglottis, the airway between the vocal cords and the trachea. Its severity is typically evaluated by estimating the percentage of obstructed airway. No public methods or datasets are currently available for automated evaluation of this condition from bronchoscopy video. We propose a pipeline for automated subglottic stenosis severity estimation during the bronchoscopy exploration, without requiring the physician to traverse the stenosed region. Our approach exploits the physical effect of illumination decline in endoscopy to segment and track the lumen and obtain a 3D model of the airway. This 3D model is obtained from a single frame and is used to measure the airway narrowing. The results show consistency with ground-truth estimations from CT scans and expert estimations, and reliable repeatability across multiple estimations on the same patient. Additionally, we release the first public benchmark for subglottic stenosis severity assessment."
+      - layout:
+        title: "3D Densification for Multi-Map Monocular VSLAM in Endoscopy"
+        link: https://arxiv.org/abs/2503.14346
+        teaser: ./images/densification.png
+        link_text: arXiv
+        venue: "Preprint 2025"
+        autors: "X. Anadón, Javier Rodríguez-Puigvert, J.M.M. Montiel"
+        source: "arXiv preprint arXiv:2503.14346, 2025"
+        abstract: "Multi-map Sparse Monocular visual Simultaneous Localization and Mapping applied to monocular endoscopic sequences has proven efficient to robustly recover tracking after the frequent losses in endoscopy due to motion blur, temporal occlusion, tools interaction or water jets. The sparse multi-maps are adequate for robust camera localization, however they are very poor for environment representation. We propose a method to remove outliers and densify the maps of the state of the art for sparse endoscopy multi-map CudaSIFT-SLAM. The NN LightDepth for up-to-scale depth dense predictions are aligned with the sparse CudaSIFT submaps by means of the robust to spurious LMedS. Our system mitigates the inherent scale ambiguity in monocular depth estimation while filtering outliers, leading to reliable densified 3D maps. We provide experimental evidence of accurate densified maps 4.15 mm RMS accuracy at affordable computing time in the C3VD phantom colon dataset. We report qualitative results on the real colonoscopy from the Endomapper dataset."
+      - layout:
+        title: "Uncertainty and Self-Supervision in Single-View Depth"
+        link: https://arxiv.org/abs/2406.14226
+        teaser: ./images/thesis.png
+        link_text: Thesis
+        venue: "PhD Thesis 2024"
+        autors: "Javier Rodríguez-Puigvert"
+        source: "Doctoral thesis, Universidad de Zaragoza. arXiv:2406.14226, 2024"
+        abstract: "Single-view depth estimation is an ill-posed problem because there are multiple depth solutions that explain 3D geometry from a single view. While deep neural networks have been shown to be effective at capturing depth from a single view, the majority of current methodologies are deterministic in nature. We have addressed this problem by quantifying the uncertainty of supervised single-view depth for Bayesian deep neural networks. There are scenarios, especially in medicine in the case of endoscopic images, where annotated data is not available. We introduce an uncertainty-aware teacher-student architecture that is trained in a self-supervised manner, taking into account the teacher uncertainty. Finally, we advocate a fully self-supervised approach that only requires RGB images and the geometric and photometric calibration of the endoscope, and propose the use of illumination as a strong single-view self-supervisory signal for deep neural networks."
+      - layout:
+        title: "Self-supervised method for obtaining depth, albedo and surface orientation estimates of a space illuminated by a light source"
+        link: https://worldwide.espacenet.com/patent/search?q=pn%3DEP4736118A1
+        link_text: Espacenet
+        venue: "Patent 2024"
+        autors: "Javier Rodríguez-Puigvert, Víctor M. Batlle, Juan D. Tardós, J.M.M. Montiel, Javier Civera, Ruben Martinez-Cantin, Pascal Fua"
+        source: "European patent application EP4736118A1, 2024"
       - layout:
         title: "LightDepth: Single-View Depth Self-Supervision from Illumination Decline"
         link: https://openaccess.thecvf.com/content/ICCV2023/html/Rodriguez-Puigvert_LightDepth_Single-View_Depth_Self-Supervision_from_Illumination_Decline_ICCV_2023_paper.html
         link_text: Paper
+        venue: "ICCV 2023"
+        links:
+          - title: arXiv
+            url: https://arxiv.org/abs/2308.10525
+          - title: Project page
+            url: https://sites.google.com/unizar.es/lightdepth
         description: | # this will include new lines to allow paragraphs
           Description about the work on/with the project
         youtube-id: Jrzzy2JjOCQ
         autors: "Javier Rodríguez-Puigvert, Víctor M. Batlle, J.M.M. Montiel, Ruben Martinez-Cantin, Pascal Fua, Juan D. Tardós, Javier Civera"
+        source: "International Conference on Computer Vision (ICCV) 2023"
         abstract: "Single-view depth estimation can be remarkably effective if there is enough ground-truth depth data for supervised training. However, there are scenarios, especially in medicine in the case of endoscopies, where such data cannot be obtained. In such cases, multi-view self-supervision and synthetic-to-real transfer serve as alternative approaches, however, with a considerable performance reduction in comparison to supervised case. Instead, we propose a single-view self-supervised method that achieves a performance similar to the supervised case. In some medical devices, such as endoscopes, the camera and light sources are co-located at a small distance from the target surfaces. Thus, we can exploit that, for any given albedo and surface orientation, pixel brightness is inversely proportional to the square of the distance to the surface, providing a strong single-view self-supervisory signal. In our experiments, our self-supervised models deliver accuracies comparable to those of fully supervised ones, while being applicable without depth ground-truth data."
       - layout:
+        title: "3D VSG: Long-term Semantic Scene Change Prediction through 3D Variable Scene Graphs"
+        link: https://arxiv.org/abs/2209.07896
+        teaser: ./images/3dvsg.png
+        link_text: arXiv
+        venue: "ICRA 2023"
+        links:
+          - title: Code
+            url: https://github.com/ethz-asl/3d_vsg
+        autors: "Samuel Looper, Javier Rodríguez-Puigvert, Roland Siegwart, Cesar Cadena, Lukas Schmid"
+        source: "IEEE International Conference on Robotics and Automation (ICRA) 2023"
+        abstract: "Numerous applications require robots to operate in environments shared with other agents, such as humans or other robots. However, such shared scenes are typically subject to different kinds of long-term semantic scene changes. The ability to model and predict such changes is thus crucial for robot autonomy. In this work, we formalize the task of semantic scene variability estimation and identify three main varieties of semantic scene change: changes in the position of an object, its semantic state, or the composition of a scene as a whole. To represent this variability, we propose the Variable Scene Graph (VSG), which augments existing 3D Scene Graph (SG) representations with the variability attribute, representing the likelihood of discrete long-term change events. We present a novel method, DeltaVSG, to estimate the variability of VSGs in a supervised fashion."
+      - layout:
         title: On the Uncertain Single-View Depths in Colonoscopies
-        link: http://arxiv.org/abs/2112.08906
-        link_text: Paper
+        link: https://arxiv.org/abs/2112.08906
+        link_text: arXiv
+        venue: "MICCAI 2022"
         description: | # this will include new lines to allow paragraphs
           Description about the work on/with the project
         youtube-id: VrUjPeZyj-0
-        autors: "Javier Rodríguez-Puigvert,David Recasens, Javier Civera, Rubén Martínez-Cantín"
-        source: "Medical Image Computing and Computer Assisted Intervention 2022"
-        abstract: "Estimating depth from endoscopic images is a pre-requisite for a wide set of AI-assisted technologies, namely accurate localization, measurement of tumors, or identification of non-inspected areas. As the domain specificity of colonoscopies -- a deformable low-texture environment with fluids, poor lighting conditions and abrupt sensor motions -- pose challenges to multi-view approaches, single-view depth learning stands out as a promising line of for single-view depth estimation in colonoscopies. Their uncertainty quantification offers great potential for such a critical application area. Our specific contribution is two-fold: 1) an exhaustive analysis of Bayesian deep networks for depth estimation in three different datasets, highlighting challenges and conclusions regarding synthetic-to-real domain changes and supervised vs. self-supervised methods; and 2) a novel teacher-student approach"
+        autors: "Javier Rodríguez-Puigvert, David Recasens, Javier Civera, Rubén Martínez-Cantín"
+        source: "Medical Image Computing and Computer Assisted Intervention (MICCAI) 2022"
+        abstract: "Estimating depth information from endoscopic images is a prerequisite for a wide set of AI-assisted technologies, such as accurate localization and measurement of tumors, or identification of non-inspected areas. As the domain specificity of colonoscopies -- deformable low-texture environments with fluids, poor lighting conditions and abrupt sensor motions -- pose challenges to multi-view 3D reconstructions, single-view depth learning stands out as a promising line of research. In this paper, we explore for the first time Bayesian deep networks for single-view depth estimation in colonoscopies. Our specific contribution is two-fold: 1) an exhaustive analysis of scalable Bayesian networks for depth learning in different datasets, highlighting challenges and conclusions regarding synthetic-to-real domain changes and supervised vs. self-supervised methods; and 2) a novel teacher-student approach to deep depth learning that takes into account the teacher uncertainty."
       - layout:
         title: Bayesian Deep Networks for Supervised Single-View Depth Learning
         link: https://arxiv.org/abs/2104.14202
-        link_text: Paper
+        link_text: arXiv
+        venue: "RA-L 2022"
         description: | # this will include new lines to allow paragraphs
           Description about the work on/with the project
         youtube-id: nj5_eVFQVZ8
         autors: "Javier Rodríguez-Puigvert, Rubén Martínez-Cantín, Javier Civera"
-        source: "IEEE Robotics and Automation Letters 2022 "
+        source: "IEEE Robotics and Automation Letters (RA-L) 2022"
         abstract: "Uncertainty quantification is a key aspect in robotic perception, as overconfident or point estimators can lead to collisions and damages to the environment and the robot. In this paper, we evaluate scalable approaches to uncertainty quantification in single-view supervised depth learning, specifically MC dropout and deep ensembles."
       - layout:
         title: Localization Service Using Sparse Visual Information Based on Recent Augmented Reality Platforms
         link: https://ieeexplore.ieee.org/document/8699237
         link_text: Paper
+        venue: "ISMAR 2018"
         quote: >
           Short overview of the project (optional)
         description: | # this will include new lines to allow paragraphs
           Description about the work on/with the project
         youtube-id: 4gG3JjAgRFM
-        autors: "Javier RodríguezPuigvert; Till Krempel; Arnulph Fuhrmann"
+        autors: "Javier Rodríguez-Puigvert, Till Krempel, Arnulph Fuhrmann"
         source: "ISMAR (In Adjunct Proceedings of the IEEE International Symposium for Mixed and Augmented Reality 2018) Munich 2018"
         abstract: "We propose a localization service based on sparse visual information using ARCore, a state-of-the-art augmented reality platform for mobile devices. Our service is constituted by two components - front-end and back-end. On the front-end, using the point cloud generated by ARCore as feature points, a corresponding binary keypoint descriptor algorithm like ORB or FREAK is computed to describe the place. On the back-end, this binary descriptor is searched in a map using the bags of binary words technique, responding with the position of the recognized place."
 
       - layout: 
         title: "Obstacle Collision Avoidance System for visually impaired based on Tango"
         link: https://github.com/jrodriguezpuigvert/OCAS
-        link_text: Paper
+        link_text: Code
+        venue: "MSc Thesis 2017"
         quote: >
           Short overview of the project (optional)
         description: | # this will include new lines to allow paragraphs
           Description about the work on/with the project
-        teaser: ./images/ocas.png	
-        autors: "Javier Rodríguez Puigvert"
+        teaser: ./images/ocas.png
+        autors: "Javier Rodríguez-Puigvert"
         source: "Technische Hochschule Köln, 24 Apr 2017"
         abstract: "In order to move freely around the space, a user could use this system as a virtual white cane. The Obstacle Collision Avoidance System intends to assist visually impaired people during the obstacle avoidance process using the depth perception of a Tango enable device. "
 
+  - title: Projects and Grants
+    nav: Projects
+    style: experience # same compact list as Experience
+    layout: text # fallback for the original theme layout
+    items:
+      - role: "EndoCartoScope: Transforming any Endoscope into a Smart Device for Intraoperative 3D Localization, Navigation and Mapping"
+        org: "Team member · Horizon EIC 2024 Transition Open"
+        dates: 2025 – 2028
+        logo: ./images/logos/endocartoscope.png
+        url: https://endocartoscope.eu
+        funders:
+          - logo: ./images/logos/eu.png
+            name: Funded by the European Union
+      - role: "EndoMapper: Real-time mapping from endoscopic video"
+        org: "Team member · Horizon 2020 FET Open"
+        dates: Mar 2021 – Nov 2024
+        logo: ./images/logos/endomapper.png
+        url: https://sites.google.com/unizar.es/endomapper
+        funders:
+          - logo: ./images/logos/eu.png
+            name: Funded by the European Union
+      - role: "FPI predoctoral grant PRE2019-090875"
+        org: "Recipient · Spanish Ministry of Science and Innovation, Agencia Estatal de Investigación"
+        dates: 2020 – 2023
+        logo: ./images/logos/escudo.png
+        funders:
+          - logo: ./images/logos/ministerio-ciencia.png
+            name: Ministerio de Ciencia, Innovación y Universidades
+          - logo: ./images/logos/aei.png
+            name: Agencia Estatal de Investigación
+    content: |
+      - **[EndoCartoScope](https://endocartoscope.eu)**: Transforming any Endoscope into a Smart Device for Intraoperative 3D Localization, Navigation and Mapping. Team member. Horizon EIC 2024 Transition Open. 2025 – 2028
+      - **[EndoMapper](https://sites.google.com/unizar.es/endomapper)**: Real-time mapping from endoscopic video. Team member. Horizon 2020 FET Open. Mar 2021 – Nov 2024
+      - **FPI predoctoral grant PRE2019-090875**. Recipient. Spanish Ministry of Science and Innovation, Agencia Estatal de Investigación. 2020 – 2023
+
+  - title: Experience
+    nav: Experience
+    style: experience # used by the "modern" and "sidebar" layouts
+    layout: text # fallback for the original theme layout
+    items:
+      - role: Postdoctoral Researcher
+        org: "Robotics, Perception and Real Time Group (RoPeRT), Universidad de Zaragoza"
+        place: Zaragoza, Spain
+        dates: Jan 2024 – present
+        logo: ./images/logos/unizar.png
+      - role: PhD Researcher
+        org: "Robotics, Perception and Real Time Group (RoPeRT), Universidad de Zaragoza"
+        place: Zaragoza, Spain
+        dates: Jan 2020 – Dec 2023
+        logo: ./images/logos/unizar.png
+      - role: Visiting Researcher
+        org: "Autonomous Systems Lab, ETH Zürich"
+        place: Zürich, Switzerland
+        dates: Feb 2022 – Aug 2022
+        logo: ./images/logos/eth.png
+      - role: Software Developer
+        org: Cologne Intelligence GmbH
+        place: Cologne, Germany
+        dates: Aug 2014 – Dec 2019
+        logo: ./images/logos/cologne-intelligence.png
+      - role: Student Software Developer
+        org: Grandcentrix GmbH
+        place: Cologne, Germany
+        dates: Sep 2013 – Aug 2014
+        logo: ./images/logos/grandcentrix.png
+    content: |
+      - **Postdoctoral Researcher**, RoPeRT, Universidad de Zaragoza, Spain. Jan 2024 – present
+      - **PhD Researcher**, RoPeRT, Universidad de Zaragoza, Spain. Jan 2020 – Dec 2023
+      - **Visiting Researcher**, Autonomous Systems Lab, ETH Zürich, Switzerland. Feb 2022 – Aug 2022
+      - **Software Developer**, Cologne Intelligence GmbH, Germany. Aug 2014 – Dec 2019
+      - **Student Software Developer**, Grandcentrix GmbH, Germany. Sep 2013 – Aug 2014
+
   - title: Talks and more
+    nav: Talks
+    style: grid # used by the "modern" layout
     layout: list # Type of content section (list/text)
     content:
 

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.name }} · {{ site.title }}</title>
+  {%- seo title=false -%}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/sidebar.css' | relative_url }}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | default: '/assets/favicon.ico' | relative_url }}">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
+  {%- if jekyll.environment == 'production' and site.gtag -%}
+    {%- include gtag.html -%}
+  {%- endif -%}
+</head>
+<body>
+  {%- assign me = site.author_name | default: "Javier Rodríguez-Puigvert" -%}
+  {%- assign me_strong = me | prepend: "<strong>" | append: "</strong>" -%}
+
+  <div class="shell">
+    <aside class="side">
+      <div class="side-inner">
+        {%- if site.about_profile_image -%}
+          <img class="portrait" src="{{ site.about_profile_image | remove_first: './' | relative_url }}" alt="Portrait of {{ site.name | escape }}" width="112" height="112">
+        {%- endif -%}
+        <h1>{{ site.name }}</h1>
+        <p class="role">{{ site.title }}</p>
+        {%- if site.affiliation -%}<p class="affil">{{ site.affiliation }}</p>{%- endif -%}
+
+        <nav class="toc" aria-label="Sections">
+          <a href="#about"><span>01</span>About</a>
+          {%- for section in site.content -%}
+            <a href="#{{ section.title | slugify }}"><span>0{{ forloop.index | plus: 1 }}</span>{{ section.nav | default: section.title }}</a>
+          {%- endfor -%}
+        </nav>
+
+        <ul class="contact">
+          {%- if site.email -%}<li class="mail">{{ site.email | escape }}</li>{%- endif -%}
+          {%- if site.scholar -%}<li><a href="https://scholar.google.com/citations?user={{ site.scholar | escape }}" target="_blank" rel="noopener">Google Scholar</a></li>{%- endif -%}
+          {%- if site.github_username -%}<li><a href="https://github.com/{{ site.github_username | escape }}" target="_blank" rel="noopener">GitHub</a></li>{%- endif -%}
+          {%- if site.linkedin_username -%}<li><a href="https://www.linkedin.com/in/{{ site.linkedin_username | escape }}" target="_blank" rel="noopener">LinkedIn</a></li>{%- endif -%}
+          {%- if site.twitter_username -%}<li><a href="https://twitter.com/{{ site.twitter_username | escape }}" target="_blank" rel="noopener">X / Twitter</a></li>{%- endif -%}
+        </ul>
+
+        <div class="side-actions">
+          {%- if site.website -%}
+            <a class="cv" href="{{ site.website | remove_first: './' | relative_url }}">Curriculum Vitae <span aria-hidden="true">↓</span></a>
+          {%- endif -%}
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.5 0-.9-.1-1.400A7 7 0 0 1 12.400 3.100 9 9 0 0 0 12 3z"/></svg>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section id="about" class="block">
+        <p class="label"><span>01</span> About</p>
+        <div class="bio">
+          {{ site.about_content | strip | markdownify }}
+        </div>
+      </section>
+
+      {%- for section in site.content -%}
+        <section id="{{ section.title | slugify }}" class="block">
+          <p class="label"><span>0{{ forloop.index | plus: 1 }}</span> {{ section.title }}</p>
+
+          {%- if section.style == "grid" -%}
+            <ul class="talks">
+              {%- for item in section.content -%}
+                {%- assign href = item.link -%}
+                {%- if item.youtube-id -%}{%- assign href = "https://www.youtube.com/watch?v=" | append: item.youtube-id -%}{%- endif -%}
+                <li class="talk">
+                  {%- if item.youtube-id -%}
+                    <a class="talk-thumb" href="{{ href }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                      <img loading="lazy" src="https://img.youtube.com/vi/{{ item.youtube-id }}/mqdefault.jpg" alt="">
+                    </a>
+                  {%- else -%}
+                    <span class="talk-thumb talk-thumb-empty" aria-hidden="true"></span>
+                  {%- endif -%}
+                  <div>
+                    <h3>{%- if href -%}<a href="{{ href }}" target="_blank" rel="noopener">{{ item.title | strip }}</a>{%- else -%}{{ item.title | strip }}{%- endif -%}</h3>
+                    <p class="meta">{{ item.autors }}</p>
+                  </div>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- elsif section.style == "highlights" -%}
+            <div class="hls">
+            {%- for h in section.items -%}
+              <article class="hl">
+                {%- if h.logo -%}<img class="hl-logo" loading="lazy" src="{{ h.logo | remove_first: './' | relative_url }}" alt="" width="56" height="56">{%- endif -%}
+                <div>
+                  {%- if h.tag -%}<p class="hl-tag">{{ h.tag }}</p>{%- endif -%}
+                  <h3>{{ h.title }}</h3>
+                  <p class="hl-text">{{ h.text }}</p>
+                  <p class="hl-links">{%- for l in h.links -%}<a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.title }} <span aria-hidden="true">→</span></a>{%- endfor -%}</p>
+                </div>
+              </article>
+            {%- endfor -%}
+            </div>
+          {%- elsif section.style == "experience" -%}
+            <ol class="jobs">
+              {%- for job in section.items -%}
+                <li class="job">
+                  <p class="job-dates">{{ job.dates }}</p>
+                  <div class="job-main">
+                    {%- if job.logo -%}<img class="job-logo" loading="lazy" src="{{ job.logo | remove_first: './' | relative_url }}" alt="" width="48" height="48">{%- else -%}<span class="job-logo job-logo-none" aria-hidden="true"></span>{%- endif -%}
+                    <div>
+                    <h3>{%- if job.url -%}<a href="{{ job.url }}" target="_blank" rel="noopener">{{ job.role }}</a>{%- else -%}{{ job.role }}{%- endif -%}</h3>
+                    <p class="job-org">{{ job.org }}{%- if job.place -%}<span> · {{ job.place }}</span>{%- endif -%}</p>
+                    {%- if job.note -%}<p class="meta">{{ job.note }}</p>{%- endif -%}{%- if job.funders -%}<p class="funders">{%- for f in job.funders -%}<img loading="lazy" src="{{ f.logo | remove_first: './' | relative_url }}" alt="{{ f.name | escape }}" title="{{ f.name | escape }}">{%- endfor -%}</p>{%- endif -%}
+                    </div>
+                  </div>
+                </li>
+              {%- endfor -%}
+            </ol>
+          {%- else -%}
+            <ol class="timeline">
+              {%- assign last_year = "" -%}
+              {%- for item in section.content -%}
+                {%- assign year = item.venue | split: " " | last -%}
+                <li class="entry">
+                  <div class="year">{%- if year != last_year -%}{{ year }}{%- endif -%}</div>
+                  {%- assign last_year = year -%}
+                  <div class="entry-body">
+                    <h3>{%- if item.link -%}<a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.title }}</a>{%- else -%}{{ item.title }}{%- endif -%}</h3>
+                    <p class="authors">{{ item.autors | replace: me, me_strong }}</p>
+                    {%- if item.source -%}<p class="meta">{{ item.source }}</p>{%- endif -%}
+                    <p class="tags">
+                      {%- if item.venue -%}<span class="tag tag-venue">{{ item.venue }}</span>{%- endif -%}
+                      {%- if item.link -%}<a class="tag" href="{{ item.link }}" target="_blank" rel="noopener">{{ item.link_text | default: "Paper" }}</a>{%- endif -%}
+                      {%- for l in item.links -%}<a class="tag" href="{{ l.url }}" target="_blank" rel="noopener">{{ l.title }}</a>{%- endfor -%}
+                      {%- if item.youtube-id -%}<a class="tag" href="https://www.youtube.com/watch?v={{ item.youtube-id }}" target="_blank" rel="noopener">Video</a>{%- endif -%}
+                    </p>
+                    {%- if item.abstract -%}
+                      <details>
+                        <summary>abstract</summary>
+                        <p>{{ item.abstract }}</p>
+                      </details>
+                    {%- endif -%}
+                  </div>
+                  <div class="entry-media">
+                    {%- if item.youtube-id -%}
+                      <a class="fig fig-video" href="https://www.youtube.com/watch?v={{ item.youtube-id }}" target="_blank" rel="noopener" aria-label="Watch video: {{ item.title | escape }}">
+                        <img loading="lazy" src="https://img.youtube.com/vi/{{ item.youtube-id }}/mqdefault.jpg" alt="">
+                      </a>
+                    {%- elsif item.teaser -%}
+                      <a class="fig fig-figure" href="{{ item.link }}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+                        <img loading="lazy" src="{{ item.teaser | strip | remove_first: './' | relative_url }}" alt="">
+                      </a>
+                    {%- endif -%}
+                  </div>
+                </li>
+              {%- endfor -%}
+            </ol>
+          {%- endif -%}
+        </section>
+      {%- endfor -%}
+
+      <footer class="footer">
+        <span>© {{ site.time | date: "%Y" }} {{ site.name }}</span>
+        <span>updated {{ site.time | date: "%Y-%m" }}</span>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.addEventListener('click', function () {
+        var root = document.documentElement;
+        var current = root.getAttribute('data-theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        var next = current === 'dark' ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+      });
+
+      var links = document.querySelectorAll('.toc a');
+      if (!('IntersectionObserver' in window) || !links.length) return;
+      var byId = {};
+      links.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          links.forEach(function (a) { a.classList.remove('active'); });
+          if (byId[e.target.id]) byId[e.target.id].classList.add('active');
+        });
+      }, { rootMargin: '-20% 0px -70% 0px' });
+      document.querySelectorAll('section.block').forEach(function (s) { io.observe(s); });
+    })();
+  </script>
+</body>
+</html>

@@ -9,7 +9,7 @@
 	    		</a>
     		{%- endif -%}
     		{%- if item.teaser -%}
-	    			<img src="{{item.teaser}}" alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" />
+	    			<img src="{{item.teaser}}" alt="{{ item.title | escape }}" width="240" height="180" border="10" style="object-fit: contain;" />
     		{%- endif -%}
           </div>
           <div class="col-sm-9 py-3">
